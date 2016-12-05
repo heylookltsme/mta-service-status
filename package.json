@@ -1,0 +1,25 @@
+{
+  "name": "mta-service-status",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heylookltsme/mta-service-status.git"
+  },
+  "author": "Corinne Hoener",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heylookltsme/mta-service-status/issues"
+  },
+  "homepage": "https://github.com/heylookltsme/mta-service-status#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "fs": "0.0.2",
+    "lodash": "^4.17.2",
+    "request": "^2.79.0"
+  }
+}
