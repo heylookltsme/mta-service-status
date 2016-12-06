@@ -78,17 +78,15 @@ function scrapeStatus() {
 
             const $ = cheerio.load(responseHtml);
 
-            let results = {};
+            let results = [];
             $('#subwayDiv').find('tr').each((index, row) => {
                 // First row is irrelevant.
                 if (index !== 0) {
-                    // Line info is in the alt text for the line image.
-                    let line = $(row).find('img').attr('alt').replace(/subway|\s/ig, '');
 
-                    // Status info is in a span tag.
-                    let status = $(row).find('span[class^="subway_"]').text();
-
-                    results[line] = status;
+                    results.push({
+                        name: $(row).find('img').attr('alt').replace(/subway|\s/ig, ''),
+                        status: $(row).find('span[class^="subway_"]').text(),
+                    });
                 }
             });
 
@@ -101,3 +99,5 @@ function scrapeStatus() {
         });
     });
 }
+
+checkSubwayStatus().then((data) => { console.log(data); });;
